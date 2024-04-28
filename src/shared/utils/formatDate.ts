@@ -21,8 +21,20 @@ export function formatDate(time: number) {
   const month = months[monthNumber];
   const day = date.getDate();
 
-  const hours = date.getHours();
-  const minutes = date.getMinutes();
+  const hours = getHours(date);
+  const minutes = getMinutes(date);
 
   return `${hours}:${minutes} · ${day} ${month} ${year}`;
+}
+
+function getHours(date: Date) {
+  const hours = date.getHours();
+
+  return hours < 10 ? `0${hours}` : `${hours}`;
+}
+
+function getMinutes(date: Date) {
+  const minutes = date.getMinutes();
+
+  return minutes < 10 ? `0${minutes}` : `${minutes}`;
 }
