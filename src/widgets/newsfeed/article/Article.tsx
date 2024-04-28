@@ -3,8 +3,8 @@ import { useEffect, useState } from "react";
 import { useRouteNavigator } from "@vkontakte/vk-mini-apps-router";
 import { ContentCard } from "@vkontakte/vkui";
 
-import { formatDate } from "../../shared/utils/formatDate";
-import { Story } from "../../shared/types/Story";
+import { formatDate } from "../../../shared/utils/formatDate";
+import { Story } from "../../../shared/types";
 
 import styles from "./Article.module.css";
 

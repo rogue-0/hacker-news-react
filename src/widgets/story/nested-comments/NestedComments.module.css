@@ -1,0 +1,13 @@
+.nested-comment-container {
+  display: "flex";
+}
+
+.separator {
+  width: 2px;
+  flex-shrink: 0;
+  background-color: #d7d8d9;
+}
+
+.nested-comments-list {
+  flex-grow: 1;
+}

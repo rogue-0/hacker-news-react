@@ -8,14 +8,17 @@ import {
   Separator,
   SimpleCell,
   Spacing,
-  Spinner,
   Text,
 } from "@vkontakte/vkui";
 
-import { Comment as CommentType } from "../../shared/types/Comment";
-import { formatDate } from "../../shared/utils/formatDate";
+import { formatDate } from "../../../shared/utils/formatDate";
+import { Comment as CommentType } from "../../../shared/types";
 
-export default function Comment({ id }: { id: number }) {
+import { CommentSkeleton } from "../comment-skeleton/CommentSkeleton";
+
+import NestedComments from "../nested-comments/NestedComments";
+
+export function Comment({ id }: { id: number }) {
   const [comment, setComment] = useState<CommentType | undefined>(undefined);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -51,11 +54,7 @@ export default function Comment({ id }: { id: number }) {
   );
 
   if (isLoading) {
-    return (
-      <Card style={{ height: "96px" }}>
-        <Spinner />
-      </Card>
-    );
+    return <CommentSkeleton />;
   }
 
   if (!comment) {
@@ -86,22 +85,7 @@ export default function Comment({ id }: { id: number }) {
           </Button>
         </SimpleCell>
       )}
-      {isExpanded && (
-        <Div style={{ display: "flex" }}>
-          <div
-            style={{
-              width: "2px",
-              flexShrink: "0",
-              backgroundColor: "#d7d8d9",
-            }}
-          />
-          <div style={{ flexGrow: "1" }}>
-            {comment.kids?.map((id) => {
-              return <Comment key={id} id={id} />;
-            })}
-          </div>
-        </Div>
-      )}
+      {isExpanded && <NestedComments comments={comment.kids ?? []} />}
     </Card>
   );
 }
