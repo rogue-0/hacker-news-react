@@ -9,5 +9,5 @@ export type Story = {
   time: number;
   title: string;
   type: Type;
-  url: string;
+  url?: string;
 };
