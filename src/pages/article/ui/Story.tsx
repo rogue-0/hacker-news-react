@@ -28,7 +28,11 @@ export function Story() {
     useGetStory();
 
   const commentsSectionHeader = useMemo(
-    () => <Header mode="secondary">{total} comments</Header>,
+    () => (
+      <Header mode="secondary">
+        {total} {total > 1 ? "comments" : "comment"}
+      </Header>
+    ),
     [total]
   );
 
