@@ -26,10 +26,6 @@ export function Comment({ id }: { id: number }) {
 
   useEffect(() => {
     async function fetchComment(id: number) {
-      if (!id) {
-        return;
-      }
-
       try {
         const res = await fetch(
           `https://hacker-news.firebaseio.com/v0/item/${id}.json`
@@ -76,7 +72,11 @@ export function Comment({ id }: { id: number }) {
         <Separator />
       </Spacing>
       <Div>
-        <Paragraph dangerouslySetInnerHTML={{ __html: comment.text }} />
+        {comment.deleted ? (
+          <Paragraph>[deleted]</Paragraph>
+        ) : (
+          <Paragraph dangerouslySetInnerHTML={{ __html: comment.text }} />
+        )}
       </Div>
       {loadMoreButton && (
         <SimpleCell>

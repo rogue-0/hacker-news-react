@@ -11,6 +11,7 @@ export type Story = {
 };
 
 export type Comment = {
+  deleted?: boolean;
   by: string;
   id: number;
   kids?: number[];
