@@ -1,1 +1,1 @@
-export { Story } from "./ui/Story";
+export { Story } from "./ui";

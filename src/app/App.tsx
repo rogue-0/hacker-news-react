@@ -9,7 +9,7 @@ import {
 import "@vkontakte/vkui/dist/vkui.css";
 
 import { Newsfeed } from "../pages/newsfeed";
-import { Story } from "../pages/article/ui/Story";
+import { Story } from "../pages/article/ui";
 
 import styles from "./App.module.css";
 
