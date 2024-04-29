@@ -20,7 +20,7 @@ export function Newsfeed() {
           disabled={loading}
           onClick={refetch}
         >
-          Refresh comments
+          Refresh stories
         </Button>
       </Div>
       {/* Newsfeed */}
