@@ -1,6 +1,6 @@
 import { CardGrid } from "@vkontakte/vkui";
 
-import Article from "../article/Article";
+import { Article } from "../article/Article";
 
 export function ArticlesList({ data }: { data: string[] }) {
   return (

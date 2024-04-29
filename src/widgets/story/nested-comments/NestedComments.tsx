@@ -4,7 +4,7 @@ import { Comment } from "../comment/Comment";
 
 import styles from "./NestedComments.module.css";
 
-export default function NestedComments({ comments }: { comments: number[] }) {
+export function NestedComments({ comments }: { comments: number[] }) {
   return (
     <Div className={styles["nested-comment-container"]}>
       <div className={styles.separator} />

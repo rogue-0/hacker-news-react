@@ -8,7 +8,7 @@ import { Story } from "../../../shared/types";
 
 import styles from "./Article.module.css";
 
-export default function Article({ id }: { id: string }) {
+export function Article({ id }: { id: string }) {
   const [story, setStory] = useState<Story | undefined>(undefined);
   const [isLoading, setIsLoading] = useState(true);
 

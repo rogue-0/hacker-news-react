@@ -16,7 +16,7 @@ import { Comment as CommentType } from "../../../shared/types";
 
 import { CommentSkeleton } from "../comment-skeleton/CommentSkeleton";
 
-import NestedComments from "../nested-comments/NestedComments";
+import { NestedComments } from "../nested-comments/NestedComments";
 
 export function Comment({ id }: { id: number }) {
   const [comment, setComment] = useState<CommentType | undefined>(undefined);

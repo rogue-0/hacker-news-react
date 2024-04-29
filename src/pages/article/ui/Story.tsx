@@ -1,4 +1,4 @@
-import { useMemo } from "react";
+import { useCallback, useMemo } from "react";
 
 import {
   Button,
@@ -15,7 +15,7 @@ import {
 } from "@vkontakte/vkui";
 import { useRouteNavigator } from "@vkontakte/vk-mini-apps-router";
 
-import StorySkeleton from "../../../widgets/story/story-skeleton/StorySkeleton";
+import { StorySkeleton } from "../../../widgets/story/story-skeleton/StorySkeleton";
 import { CommentsList } from "../../../widgets/story/comments-list/CommentsList";
 import { formatDate } from "../../../shared/utils/formatDate";
 
@@ -36,6 +36,11 @@ export function Story() {
     [total]
   );
 
+  const handleBackButton = useCallback(
+    () => routeNavigator.push("/"),
+    [routeNavigator]
+  );
+
   if (isStoryLoading) {
     return <StorySkeleton />;
   }
@@ -50,12 +55,7 @@ export function Story() {
     <>
       {/* Back button */}
       <PanelHeader
-        before={
-          <PanelHeaderBack
-            label="Back"
-            onClick={() => routeNavigator.push("/")}
-          />
-        }
+        before={<PanelHeaderBack label="Back" onClick={handleBackButton} />}
       />
       {/* Info about story */}
       <Group>

@@ -1,6 +1,6 @@
 import { Group, PanelHeader, Spinner } from "@vkontakte/vkui";
 
-export default function StorySkeleton() {
+export function StorySkeleton() {
   return (
     <>
       <PanelHeader />
