@@ -1,5 +1,5 @@
 App ID: 51915057\
-Ссылка на мини приложение: https://vk.com/app51915057
+Ссылка на мини приложение: https://vk.com/app51915057\
 Ссылка на хостинг: https://prod-app51915057-36c676a8ed4f.pages-ac.vk-apps.com/index.html
 
 ## Инструкция по запуску
