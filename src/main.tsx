@@ -1,5 +1,6 @@
 import { createRoot } from "react-dom/client";
 
+import vkBridge from "@vkontakte/vk-bridge";
 import {
   RouterProvider,
   createHashRouter,
@@ -8,6 +9,8 @@ import { AdaptivityProvider, AppRoot, ConfigProvider } from "@vkontakte/vkui";
 import "@vkontakte/vkui/dist/vkui.css";
 
 import App from "./app/App.tsx";
+
+vkBridge.send("VKWebAppInit");
 
 const router = createHashRouter([
   {
